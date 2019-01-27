@@ -26,7 +26,19 @@ def remove_guests
   @guests.clear
 end
 
-# def play_song
+# def select_song(choice)
+#   song_choice = @songs.find { |song| song.name == choice}
+#   return "Now playing #{song_choice}"
+# end
+
+def full_capacity
+  if @guests.length > 2
+    return "Sorry we're at capacity"
+  else
+    return "Enjoy!"
+  end
+end
+
 
 
 

@@ -10,11 +10,12 @@ class TestRoom < MiniTest::Test
     @guest1 = Guest.new "Billy Bob"
     @guest2 = Guest.new "Rob"
     @guest3 = Guest.new "Bob"
-    @room1 = Room.new(8, [@guest1, @guest2, @guest3], [@song1, @song2, @song3])
     @song1 = Song.new "Bat out of hell"
     @song2 = Song.new "Pour some sugar on me"
     @song3 = Song.new "Smells like teen spirit"
+    @room1 = Room.new(8, [@guest1, @guest2, @guest3], [@song1, @song2, @song3])
     @guest4 = Guest.new "James"
+    @room2 = Room.new(3, [@guest1, @guest2, @guest3], [@song1, @song2, @song3])
   end
 
   def test_room_capacity()
@@ -26,6 +27,7 @@ class TestRoom < MiniTest::Test
   end
 
   def test_get_playlist()
+    p @room1
     assert_equal(["Bat out of hell", "Pour some sugar on me", "Smells like teen spirit"], @room1.get_playlist)
   end
 
@@ -43,6 +45,13 @@ class TestRoom < MiniTest::Test
     assert_equal(0, @room1.guests.length)
   end
 
+  # def test_select_song
+  #   assert_equal("Now playing Smells like teen spirit", @room1.select_song("Smells like teen spirit"))
+  # end
+
+  def test_full_capacity
+    assert_equal("Sorry we're at capacity", @room2.full_capacity )
+end 
 
 
 
