@@ -50,8 +50,8 @@ class TestRoom < MiniTest::Test
   # end
 
   def test_full_capacity
-    assert_equal("Sorry we're at capacity", @room2.full_capacity )
-end 
+    assert_equal("Sorry we're at capacity", @room2.full_capacity(4))
+end
 
 
 

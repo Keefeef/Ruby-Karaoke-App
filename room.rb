@@ -31,8 +31,8 @@ end
 #   return "Now playing #{song_choice}"
 # end
 
-def full_capacity
-  if @guests.length > 2
+def full_capacity(capacity)
+  if @guests.length < capacity
     return "Sorry we're at capacity"
   else
     return "Enjoy!"
